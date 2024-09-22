@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Screen Recorder</title>
+</head>
+<body>
+    <!-- Container for the video stream -->
+    <div class="vid-container">
+        <video autoplay controls src=""></video> <!-- Video element to display live stream -->
+    </div>
+
+    <!-- Container for the action buttons (Record, Capture, Mute) -->
+    <div class="action-cont">
+        <!-- Record Button -->
+        <div class="record-btn-cont">
+            <div class="record-btn"></div>
+        </div>
+        <!-- Capture Button -->
+        <div class="capture-btn-cont">
+            <div class="capture-btn"></div>
+        </div>
+        <!-- Mute Button -->
+        <div class="mute-btn-cont">
+            <button class="mute-btn">Mute</button>
+        </div>
+    </div>
+
+    <!-- Timer display for recording -->
+    <div class="timer-cont">
+        <h1 class="timer">00:00:00</h1>
+    </div>
+
+    <!-- Filter selection container -->
+    <div class="filter-cont">
+        <div class="filter orange"></div> <!-- Orange filter -->
+        <div class="filter brown"></div> <!-- Brown filter -->
+        <div class="filter pink"></div> <!-- Pink filter -->
+        <div class="filter transparent"></div> <!-- Transparent filter -->
+    </div>
+
+    <!-- Layer to display the selected filter effect -->
+    <div class="filter-layer"></div>
+
+    <!-- Script to handle the JavaScript functionality -->
+    <script src="./index.js"></script>
+</body>
+</html>

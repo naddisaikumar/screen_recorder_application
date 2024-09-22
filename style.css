@@ -1,0 +1,184 @@
+/* Universal box-sizing to make padding and borders part of the element's size */
+* {
+    box-sizing: border-box;
+}
+
+/* Reset margins and padding for body */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Video container takes up full screen */
+.vid-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+/* Video element stretches to fill the container */
+video {
+    height: 100%;
+    width: 100%;
+}
+
+/* Action buttons container, fixed at the right side of the screen */
+.action-cont {
+    height: 12rem;
+    width: 5rem;
+    position: absolute;
+    top: calc((100vh - 12rem) / 2);
+    right: 5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+/* Style for individual action buttons inside the container */
+.action-cont > * {
+    width: 100%;
+    height: 5rem;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styling for the record button */
+.record-btn-cont {
+    margin-top: 1rem;
+}
+.record-btn {
+    background-color: red;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+/* Specific styling for the capture button */
+.capture-btn-cont {
+    margin-top: 1rem;
+}
+.capture-btn {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+/* Animation for scaling the record button during recording */
+.scale-record {
+    animation-name: scale-record;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+/* Animation for scaling the capture button when clicked */
+.scale-capture {
+    animation-name: scale-capture;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+
+/* Keyframes for record button scaling animation */
+@keyframes scale-record {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Keyframes for capture button scaling animation */
+@keyframes scale-capture {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Container for timer display */
+
+.timer-cont {
+    position: absolute;
+    top: 2rem;   /* Position from the top of the screen */
+    right: 2rem; /* Position from the right side of the screen */
+    color: aqua;
+    font-size: 1.5rem; /* Font size for visibility */
+    z-index: 3; /* Ensure the timer appears on top of other elements */
+}
+
+
+
+/* Initially hide the timer until recording starts */
+.timer {
+    display: none;
+}
+
+/* Container for the filter buttons */
+.filter-cont {
+    height: 16rem;
+    width: 5rem;
+    background-color: aqua;
+    position: absolute;
+    top: calc((100vh - 16rem) / 2);
+    left: 5rem;
+    z-index: 2;
+}
+
+/* Styling for individual filter buttons */
+.filter {
+    height: 4rem;
+    border: 2px solid #fff; /* White border for visibility */
+    cursor: pointer;
+}
+
+/* Filter layer that covers the video when a filter is applied */
+.filter-layer {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Styling for each color filter */
+.orange {
+    background-color: #f4a0079e;
+}
+
+.brown {
+    background-color: #eb0b0bab;
+}
+
+.pink {
+    background-color: #e9b7c0bd;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+/* Mute button styling */
+.mute-btn-cont {
+    margin-top: 1rem;
+}
+
+.mute-btn {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mute-btn:hover {
+    background-color: lightgray;
+}
